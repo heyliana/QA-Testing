@@ -1,30 +1,29 @@
+#language:pt
 
-Feature: Login Screen
+Funcionalidade: Login Screen
 
     ¹ Ao inserir dados válidos deve ser direcionado para a tela de checkout
     ² Ao inserir um dos campos inválidos deve exibir uma mensagem de alerta - Usuário ou senha inválidos - 
 
-    Background: Ação cliente
-    Given que acesse a página de login da EBAC-Shop
+    Contexto: Ação cliente
+    Dado que acesse a página de login da EBAC-Shop
 
-    Scenario: Autenticação Válida
-    When o usuário digitar o usuário "usuario@ebac.com.br"
-    And a senha "senha#246"
-    Then deve direcionar o usuário para a página de checkout
+    Cenario: Autenticação Válida
+    Quando o usuário digitar o usuário "usuario@ebac.com.br" e a senha "senha#246"
+    Então deve direcionar o usuário para a página de checkout
 
-    Scenario Outline: Usuário e Senha inválida
-    When o usuário insere "<usuario>" no campo "Usuário"
-    And o usuário insere "<senha>" no campo "Senha"
-    And o usuário clica no botão "Login"
-    Then o sistema deve exibir uma mensagem de alerta "Usuário ou Senha inválida"
-    And o sistema não deve permirtit acesso
+    Esquema do Cenario: Usuário e Senha inválida
+    Quando o usuário insere "<usuario>" no campo "Usuário" e "<senha>" no campo "Senha"
+    E o usuário clica no botão "Login"
+    Então o sistema deve exibir uma mensagem de alerta "Usuário ou Senha inválida"
+    E o sistema não deve permirtit acesso
 
     Examples:
-        |      usuario      |      senha      |
-        | "usuario_errado"  | "senha_correta" |
-        | "usuario_correto" | "senha_errada"  |
-        | "usuario_errado"  | "senha_errada"  |
-        |        ""         | "senha_correta" |
-        | "usuario_correto" |        ""       |
-        |        ""         |        ""       |
+        |      usuario       |      senha      |
+        | "ysurio@ebac.com"  |   "senha#246"   |
+        | "usuario@ebac.com" |   "senha@123"   |
+        | "usario@ebac.com"  |   "senha@456"   |
+        |        ""          |   "senha@246"   |
+        | "usuario@ebac.com" |        ""       |
+        |        ""          |        ""       |
          
