@@ -70,8 +70,8 @@ Observe que os testes incluem a definição `# language: pt` no início do arqui
 Para dúvidas, sugestões ou problemas, sinta-se à vontade para:
 - Abrir uma issue
 - Enviar um pull request
-- Entrar em contato através [adicione seu contato aqui]
+- Entrar em contato pelo meu e-mail heyliana.qa@gmail.com
 
 ---
 
-📝 **Nota**: Este repositório é destinado a fins educacionais e de estudo em QA.
+📝 **Nota**: Este repositório é destinado a fins educacionais e de estudo em QA da Escola <a href="https://ebaconline.com.br/"> EBAC </a>.
